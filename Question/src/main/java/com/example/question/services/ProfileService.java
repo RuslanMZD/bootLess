@@ -29,7 +29,7 @@ public class ProfileService {
 
         ProfileDto profileDto= mapper.mapper(profile, ProfileDto.class);
         mapper.mapper(profileDto,Profile.class); // почему тут обратно?
-
+        System.out.println("Oke");
         return profileDto;
 
     }
