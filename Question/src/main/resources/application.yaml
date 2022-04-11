@@ -1,0 +1,19 @@
+spring:
+
+
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/SpringBoot
+    password: 258378
+    username: postgres
+
+  jpa:
+    hibernate:
+      dialect: PostgreSQL94Dialect
+      ddl-auto: create
+
+    show-sql: true
+
+server:
+  port: 8080
