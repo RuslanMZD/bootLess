@@ -12,6 +12,18 @@ import java.util.List;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@NamedEntityGraphs(value ={@NamedEntityGraph(name = "all-fields",
+        attributeNodes ={
+        @NamedAttributeNode(value = "id"),
+        @NamedAttributeNode(value = "name"),
+        @NamedAttributeNode(value = "questions",subgraph = "fields-question")
+        },
+        subgraphs = @NamedSubgraph(name ="fields-question",attributeNodes = {
+                @NamedAttributeNode(value = "id"),
+                @NamedAttributeNode(value = "name"),
+                @NamedAttributeNode(value = "level")
+}))
+})
 public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
